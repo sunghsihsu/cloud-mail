@@ -668,7 +668,7 @@ function submitRegister() {
   top: 28px;
   left: 32px;
   z-index: 20;
-  color: #ff819d;
+  color: #ffffff;
   font-size: 30px;
   font-weight: 700;
   line-height: 1;
@@ -678,7 +678,7 @@ function submitRegister() {
 }
 
 .xora-logo:hover {
-  color: #ffaeb9;
+  color: #ff819d;
 }
 
 @media (max-width: 767px) {

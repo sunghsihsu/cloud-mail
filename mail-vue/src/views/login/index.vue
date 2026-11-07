@@ -1,5 +1,6 @@
 <template>
   <div id="login-box" :style=" background ? 'background: var(--el-bg-color)' : ''" v-loading="oauthLoading" element-loading-text="登录中...">
+    <a class="xora-logo" href="https://xoracore.com/" aria-label="xora 主頁">xora</a>
     <div id="background-wrap" v-if="!settingStore.settings.background">
       <div class="x1 cloud"></div>
       <div class="x2 cloud"></div>
@@ -661,6 +662,32 @@ function submitRegister() {
 </style>
 
 <style lang="scss" scoped>
+
+.xora-logo {
+  position: fixed;
+  top: 28px;
+  left: 32px;
+  z-index: 20;
+  color: #ff819d;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.xora-logo:hover {
+  color: #ffaeb9;
+}
+
+@media (max-width: 767px) {
+  .xora-logo {
+    top: 20px;
+    left: 20px;
+    font-size: 27px;
+  }
+}
 
 .form-wrapper {
   position: fixed;

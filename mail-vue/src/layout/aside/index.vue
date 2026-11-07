@@ -1,10 +1,9 @@
 <template>
   <el-scrollbar class="scroll">
     <div>
-      <div class="title" :class="{ 'title-display': titleUsesDisplayFont }">
-        <img class="logo" :src="logoUrl" alt="" />
-        <div>{{settingStore.settings.title}}</div>
-      </div>
+      <button class="title xora-brand" type="button" aria-label="返回郵箱收件匣" @click="router.push({ name: 'email' })">
+        xora
+      </button>
       <button v-perm="'email:send'" class="compose-bar" type="button" @click="openCompose">
         <Icon icon="material-symbols:edit-outline-sharp" width="22" height="22" />
         <span>{{ $t('compose') }}</span>
@@ -75,7 +74,6 @@
 
 <script setup>
 import router from "@/router/index.js";
-import {computed} from "vue";
 import { useRoute } from "vue-router";
 import {Icon} from "@iconify/vue";
 import {useSettingStore} from "@/store/setting.js";
@@ -103,49 +101,30 @@ function openCompose() {
   font-display: swap;
 }
 
-.title {
+.title.xora-brand {
   margin: 10px 6px;
   height: 45px;
+  width: calc(100% - 12px);
+  border: 0;
   border-radius: 6px;
   display: flex;
-  position: relative;
-  font-size: 18px;
-  font-weight: 600;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
-  color: #ffffff;
-  transition: all 0.3s ease;
-  max-width: 240px;
   padding: 0 10px;
-  > div {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    max-width: calc(240px - 20px - 32px - 5px);
-  }
-
-  .logo {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    object-fit: contain;
-  }
-
-  .user-right-icon {
-    align-self: center;
-    position: absolute;
-    font-size: 12px;
-    right: 8px;
-    color: #ffffff;
-  }
-
+  background: transparent;
+  color: #ff819d;
+  font-family: Inter, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-.title.title-display {
-  font-family: "BAHAMASB", Inter, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: normal;
+.title.xora-brand:hover {
+  color: #ffaeb9;
 }
 
 .compose-bar {
